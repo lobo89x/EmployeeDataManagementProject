@@ -33,7 +33,7 @@
 
                                   </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="tablebody">
                                   <tr>
                                     <!-- <th scope="row">1</th>
                                     <td>Mark</td>
@@ -106,6 +106,32 @@
    messagingSenderId: "586932522354",
    appId: "1:586932522354:web:50429b51aab8bf6f"
  };
+
+
+function displyTable() {
+  database.ref().on("value", function(snapshot) {
+      var sv = snapshot.val();
+      newrow = $("<div>");
+      newrow.attr("row");
+
+      console.log(childSnapshot.val().name);
+      console.log(childSnapshot.val().role);
+      console.log(childSnapshot.val().joinDate);
+      console.log(childSnapshot.val().MonthsWorked);
+      console.log(childSnapshot.val().Monthlyrate);
+      empName = childSnapshot.val().name
+      $("#employee-name").push(empRole)
+      empRole = childSnapshot.val().role;
+      $("#role-placeholder").push(empRole)
+      empJoin = childSnapshot.val().joinDate;
+      $("#startDate").push(empJoin);
+      empMonthlyRate = childSnapshot.val().joinDate;
+      $("#monthlyRate").push(empMonthlyRate);
+      $(".tablebody").push(newrow);
+}, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
 </script>
