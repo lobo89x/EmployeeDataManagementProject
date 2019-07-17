@@ -106,6 +106,24 @@
    messagingSenderId: "586932522354",
    appId: "1:586932522354:web:50429b51aab8bf6f"
  };
+
+function displyTable() {
+  database.ref().on("value", function(snapshot) {
+
+  newrow = $("<div>");
+      newrow.attr("row");
+      empName = //firbase pull
+      $("#employee-name").push(empRole)
+      empRole = //firebase pull
+      $("#role-placeholder").push(empRole)
+      empdate = //firebase pull
+      $("#dateAndTime").push(empdate);
+      empMonthly = //firebase pull
+      $("#monthly-rate").push(empMonthly);
+}, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
 </script>
